@@ -190,23 +190,6 @@ Option Explicit
 
     End Sub
 
-    '
-    ' FolderPicker
-    ' -------------------------------------------------------------------
-    ' フォルダを選択するダイアログを表示して選んでもらう
-    ' 正直数行しかないので、別途関数化する必要はない程度
-    ' (だが頻繁に使うよね。)
-    '
-    Public Function FolderPicker() As String
-        With Application.FileDialog(msoFileDialogFolderPicker)
-            .AllowMultiSelect = False
-            .Title = "対象となるフォルダの選択"
-            If .Show = True Then
-                FolderPicker = .SelectedItems(1)
-            End If
-        End With
-    End Function
-
 
     '
     ' cnvNetPath2Local
