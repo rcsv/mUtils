@@ -30,7 +30,7 @@ Public Function getFolderPath() As String
     
     ' フォルダ名を取得したら戻す
     If .Show = True Then
-      getFolderPath = .SelectedItem(1)
+      getFolderPath = .SelectedItems(1)
     End If
   End With
 
@@ -60,9 +60,9 @@ Public Function getFilePath(Optional initialDirectory As String = "", _
     If .Show = True Then
       ' さらにファイル名をフルパスで返すか、ファイル名だけで返すか
       If flgWithPath Then
-        getFilePath = Dir(.SelectedItem(1))
+        getFilePath = Dir(.SelectedItems(1))
       Else
-        getFilePath = .SelectedItem(1)
+        getFilePath = .SelectedItems(1)
       End If
     End If
   End With
