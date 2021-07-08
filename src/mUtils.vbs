@@ -6,7 +6,7 @@ Option Explicit
 ' Public NotInherits Class Utils
 
 
-    ' 設定項目が始まる行数
+    ' 設定項目が始まる行数をここでセットします
     Private Const rowSTART As Integer = 4 ' configure data starts 4
 
     ' ログファイルの名前 - 直下に作成します。
@@ -260,7 +260,7 @@ Option Explicit
     End Function
 
     '
-    ' addMITAYO
+    ' addMITAYO / addHANAKUSO
     ' --------------------------------------------------------------------
     ' ファイル名文字列をパラメータで取得し、
     ' 末尾（拡張子の直前）に、●をつけた文字列を生成する
@@ -286,6 +286,10 @@ Option Explicit
             ' すでに HANAKUSOがついているファイル名の場合は何もしない
             addMITAYO = str
         End If
+    End Function
+
+    Public Function addHANAKUSO(ByVal str As String, Optional flgCHAR As String = HANAKUSO) As String
+        addHANAKUSO = addMITAYO(str, flgCHAR)
     End Function
 
     '
