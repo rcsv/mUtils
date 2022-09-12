@@ -16,8 +16,8 @@ End Function
 ' ConcatIf
 ' 
 ' ALTER TECTJOIN function for before Excel 2019
-' use: =ConcatIf(", ", A1:C3, F3:F5)
-Public Function CONCATIF(glue_str As String ParamArray joinRanges() As Variant) As String
+' use: =ConcatIfs(", ", A1:C3, F3:F5)
+Public Function CONCATIFS(glue_str As String, ParamArray joinRanges() As Variant) As String
 	
 	Dim index As Integer
 	Dim joinRange As Variant
@@ -30,10 +30,10 @@ Public Function CONCATIF(glue_str As String ParamArray joinRanges() As Variant) 
 			' skip when no data
 			If joinRange(index) > "" Then
 				' prepare : add glue string before next string (without first)
-				If Len(CONCATIF) <> 0 Then
-					CONCATIF = CONCATIF & glue_str
+				If Len(CONCATIFS) <> 0 Then
+					CONCATIFS = CONCATIFS & glue_str
 				End If
-				CONCATIF = CONCATIF & joinRange(index)
+				CONCATIFS = CONCATIFS & joinRange(index)
 			End If
 		Next index
 	Next
