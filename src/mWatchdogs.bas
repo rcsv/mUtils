@@ -1,7 +1,7 @@
 '
 ' module name : mWatchdogs.bas
 ' version     : 1.0.2
-' author      : tomohiro awane <Tomohiro.Awane@aisin.co.jp>
+' author      : rcsvpg@outlook.com
 '
 Option Explicit
 '
