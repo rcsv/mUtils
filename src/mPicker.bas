@@ -1,7 +1,7 @@
 '
 ' module name : mPickers.bas
 ' version     : 1.0.2
-' author      : tomohiro awane <Tomohiro.AWANE@aisin.co.jp>
+' author      : rcsvpg@outlook.com
 '
 Option Explicit
 '
