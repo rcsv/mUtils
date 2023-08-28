@@ -13,8 +13,6 @@ Option Explicit
 ' オリジナルファイルは、ボタンを設置したシートのどこかにあります
 '
 ' 注意：このマクロで生成するダミーファイルは、エクセルと同じフォルダに固定
-' 注意：このマクロは、強引に .mp4 を生成する目的で作成されているため、
-'       コピー後のファイルの拡張子は MP4 で固定。
 '
 
 '
@@ -34,9 +32,19 @@ Private Const START_RENAME_LIST As Integer = 5
 ' ファイルをコピーするスクリプトのみ抽出
 Private Sub makeReplica(original As String, destination As String)
 
-    Dim fso as Object
+    ' use FileSystemObject
+    Dim fso As Object
     Set fso = CreateObject("Scripting.FileSystemObject")
-    fso.CopyFile original, destname
+
+    ' get Extension
+    Dim ext As String
+    ext = fso.GetExtensionName(original)
+
+    ' copy with original extension
+    fso.CopyFile original, destination & "." & ext
+
+    ' release
+    Set fso = Nothing
     
 End Sub
 
